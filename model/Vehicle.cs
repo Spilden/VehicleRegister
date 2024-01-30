@@ -10,5 +10,6 @@ public class Vehicle
     public virtual void DisplayInfo()
     {
         Console.WriteLine($"Kjøretøy: {PlateNumber}, {Brand}, {Model}, {YearModel}");
+        Console.WriteLine("-------------------------------------------------------");
     }
 }

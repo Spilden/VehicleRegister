@@ -10,7 +10,7 @@ public class VehicleService
     {
         foreach (Vehicle vehicle in vehicles)
         {
-            Console.WriteLine($"Bil: {vehicle.PlateNumber}, {vehicle.Brand}, {vehicle.Model}, {vehicle.YearModel}");
+            vehicle.DisplayInfo();
         }
     }
 }

@@ -27,3 +27,4 @@ C:\Users\mrspi\Downloads\VehicleRegister\VehicleRegister\obj\Debug\net7.0\refint
 C:\Users\mrspi\Downloads\VehicleRegister\VehicleRegister\obj\Debug\net7.0\VehicleRegister.pdb
 C:\Users\mrspi\Downloads\VehicleRegister\VehicleRegister\obj\Debug\net7.0\VehicleRegister.genruntimeconfig.cache
 C:\Users\mrspi\Downloads\VehicleRegister\VehicleRegister\obj\Debug\net7.0\ref\VehicleRegister.dll
+C:\Users\mrspi\Downloads\VehicleRegister\VehicleRegister\obj\Debug\net7.0\VehicleRegister.sourcelink.json
