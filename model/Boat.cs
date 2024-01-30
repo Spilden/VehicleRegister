@@ -1,43 +1,44 @@
-using Microsoft.VisualBasic;
-
 namespace VehicleRegister.model;
 
 public class Boat : Vehicle
 {
-    public int Length { get; set; }
-    public int Width { get; set; }
+    public float Length { get; set; }
+    public float Width { get; set; }
     public int Hp { get; set; }
 
     public override void DisplayInfo()
     {
         base.DisplayInfo();
-        Console.WriteLine($"Lengde: {Length}, Bredde: {Width}, Hestekrefter: {Hp}");
+        Console.WriteLine($", Lengde: {Length}, Bredde: {Width}, Hestekrefter: {Hp}");
     }
 
     public static Boat CreateBoat()
     {
-        Console.WriteLine("Skiltnummer: ");
-        string plateNumber = Console.ReadLine();
-        Console.WriteLine("Merke: ");
-        string brand = Console.ReadLine();
-        Console.WriteLine("Modell: ");
-        string model = Console.ReadLine();
-        Console.WriteLine("Årsmodell: ");
-        int yearModel = int.Parse(Console.ReadLine());
-        Console.WriteLine("Hvor mange fot er båten?");
-        int length = int.Parse(Console.ReadLine());
-        Console.WriteLine("Hvor brei er båten?");
-        int width = int.Parse(Console.ReadLine());
-        Console.WriteLine("Hvor mange hestekrefter har båten?");
-        int hp = int.Parse(Console.ReadLine());
+        float lenght, width;
+        int hp;
 
-        return new Boat()
+        var vehicle = CreateVehicle(); // Kaller CreateVehicle fra Vehicle classen og lagrer den i en ny variabel.
+        try
         {
-            PlateNumber = plateNumber,
-            Brand = brand,
-            Model = model,
-            YearModel = yearModel,
-            Length = length,
+            lenght = float.Parse(Console.ReadLine());
+            Console.WriteLine("Hvor brei er båten?");
+            width = float.Parse(Console.ReadLine());
+            Console.WriteLine("Hvor mange hestekrefter har båten?");
+            hp = int.Parse(Console.ReadLine());
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine($"Error: {e.Message}");
+            throw;
+        }
+
+        return new Boat
+        {
+            PlateNumber = vehicle.PlateNumber,
+            Brand = vehicle.Brand,
+            Model = vehicle.Model,
+            YearModel = vehicle.YearModel,
+            Length = lenght,
             Width = width,
             Hp = hp
         };

@@ -1,5 +1,4 @@
-﻿
-using VehicleRegister.model;
+﻿using VehicleRegister.model;
 
 var vehicleService = new VehicleService();
 
@@ -12,7 +11,7 @@ while (true)
     Console.WriteLine("5. Vis alle kjøretøy!");
     Console.WriteLine("6. Avslutt!");
 
-    string choice = Console.ReadLine();
+    var choice = Console.ReadLine();
 
     switch (choice)
     {
@@ -38,7 +37,3 @@ while (true)
             break;
     }
 }
-
-
-
-

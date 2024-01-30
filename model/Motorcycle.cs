@@ -7,28 +7,21 @@ public class Motorcycle : Vehicle
     public override void DisplayInfo()
     {
         base.DisplayInfo();
-        Console.WriteLine($"Sidevogn: {(SideCar ? "Ja" : "Nei")}");
+        Console.WriteLine($", Sidevogn: {(SideCar ? "Ja" : "Nei")}");
     }
 
     public static Motorcycle CreateMotorcycle()
     {
-        Console.WriteLine("Skriv inn skiltnummer: ");
-        String plateNumber = Console.ReadLine();
-        Console.WriteLine("Merke: ");
-        String brand = Console.ReadLine();
-        Console.WriteLine("Modell: ");
-        String model = Console.ReadLine();
-        Console.WriteLine("Årsmodell: ");
-        int yearModel = int.Parse(Console.ReadLine());
+        var vehicle = CreateVehicle(); // Kaller CreateVehicle fra Vehicle classen og lagrer den i en ny variabel.
         Console.WriteLine("Sidevogn: ");
-        bool sideCar = Console.ReadLine().ToLower() == "ja";
+        var sideCar = Console.ReadLine().ToLower() == "ja";
 
-        return new Motorcycle()
+        return new Motorcycle
         {
-            PlateNumber = plateNumber,
-            Brand = brand,
-            Model = model,
-            YearModel = yearModel,
+            PlateNumber = vehicle.PlateNumber,
+            Brand = vehicle.Brand,
+            Model = vehicle.Model,
+            YearModel = vehicle.YearModel,
             SideCar = sideCar
         };
     }

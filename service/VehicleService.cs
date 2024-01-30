@@ -1,16 +1,16 @@
 using VehicleRegister.model;
+
 public class VehicleService
 {
-    private List<Vehicle> vehicles = new List<Vehicle>();
+    private readonly List<Vehicle> vehicles = new();
+
     public void AddVehicle(Vehicle vehicle)
     {
         vehicles.Add(vehicle);
     }
+
     public void ShowVehicles()
     {
-        foreach (Vehicle vehicle in vehicles)
-        {
-            vehicle.DisplayInfo();
-        }
+        foreach (var vehicle in vehicles) vehicle.DisplayInfo();
     }
 }

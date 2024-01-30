@@ -1,4 +1,3 @@
-
 using VehicleRegister.model;
 
 public class Car : Vehicle
@@ -8,28 +7,30 @@ public class Car : Vehicle
     public override void DisplayInfo()
     {
         base.DisplayInfo();
-        Console.WriteLine($"{Seats}");
-        Console.WriteLine("--------------------------------------------------------");
+        Console.WriteLine($", Antall seter: {Seats}");
     }
+
     public static Car CreateCar()
     {
-        Console.WriteLine("Skiltnummer: ");
-        string plateNumber = Console.ReadLine();
-        Console.WriteLine("Merke: ");
-        string brand = Console.ReadLine();
-        Console.WriteLine("Modell: ");
-        string model = Console.ReadLine();
-        Console.WriteLine("Årsmodell: ");
-        int yearModel = int.Parse(Console.ReadLine());
-        Console.WriteLine("Antall Seter: ");
-        int seats = int.Parse(Console.ReadLine());
+        int seats;
+        var vehicle = CreateVehicle(); // Kaller CreateVehicle fra Vehicle classen og lagrer den i en ny variabel.
+        try
+        {
+            Console.WriteLine("Antall Seter: ");
+            seats = int.Parse(Console.ReadLine());
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine($"Error: {e.Message}");
+            throw;
+        }
 
         return new Car
         {
-            PlateNumber = plateNumber,
-            Brand = brand,
-            Model = model,
-            YearModel = yearModel,
+            PlateNumber = vehicle.PlateNumber,
+            Brand = vehicle.Brand,
+            Model = vehicle.Model,
+            YearModel = vehicle.YearModel,
             Seats = seats
         };
     }
