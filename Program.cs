@@ -10,7 +10,7 @@ while (true)
     Console.WriteLine("4. Legg til båt!");
     Console.WriteLine("5. Vis alle kjøretøy!");
     Console.WriteLine("6. Avslutt!");
-
+    Console.Write("Ditt valg: ");
     var choice = Console.ReadLine();
 
     switch (choice)

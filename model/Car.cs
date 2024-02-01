@@ -1,4 +1,4 @@
-using VehicleRegister.model;
+namespace VehicleRegister.model;
 
 public class Car : Vehicle
 {
@@ -12,17 +12,12 @@ public class Car : Vehicle
 
     public static Car CreateCar()
     {
-        int seats;
+        // int seats;
         var vehicle = CreateVehicle(); // Kaller CreateVehicle fra Vehicle classen og lagrer den i en ny variabel.
-        try
+        Console.Write("Antall Seter: ");
+        if (!int.TryParse(Console.ReadLine(), out var seats))
         {
-            Console.WriteLine("Antall Seter: ");
-            seats = int.Parse(Console.ReadLine());
-        }
-        catch (Exception e)
-        {
-            Console.WriteLine($"Error: {e.Message}");
-            throw;
+            Console.WriteLine("You did not enter a valid number!");
         }
 
         return new Car

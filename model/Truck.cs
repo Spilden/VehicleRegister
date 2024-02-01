@@ -3,26 +3,14 @@ using VehicleRegister.model;
 public class Truck : Vehicle
 {
     public int LoadCapacity { get; set; }
-
-    public override void DisplayInfo()
-    {
-        base.DisplayInfo();
-        Console.WriteLine($", Lastekapasitet: {LoadCapacity}");
-    }
-
     public static Truck CreateTruck()
     {
-        int loadCapacity;
         var vehicle = CreateVehicle(); // Kaller CreateVehicle fra Vehicle classen og lagrer den i en ny variabel.
-        try
+        
+        Console.Write("Lastekapasitet: ");
+        if(!int.TryParse(Console.ReadLine(), out var loadCapacity))
         {
-            Console.WriteLine("Lastekapasitet: ");
-            loadCapacity = int.Parse(Console.ReadLine());
-        }
-        catch (Exception e)
-        {
-            Console.WriteLine($"Error: {e.Message}");
-            throw;
+            Console.WriteLine("You did not enter a valid number!");
         }
 
         return new Truck
@@ -33,5 +21,10 @@ public class Truck : Vehicle
             YearModel = vehicle.YearModel,
             LoadCapacity = loadCapacity
         };
+    }
+    public override void DisplayInfo()
+    {
+        base.DisplayInfo();
+        Console.WriteLine($", Lastekapasitet: {LoadCapacity}");
     }
 }

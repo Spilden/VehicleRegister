@@ -15,24 +15,21 @@ public class Vehicle
 
     public static Vehicle CreateVehicle()
     {
-        string plateNumber, brand, model;
         int yearModel;
 
-        try
+        Console.Write("Skiltnummer: ");
+        var plateNumber = Console.ReadLine();
+
+        Console.Write("Merke: ");
+        var brand = Console.ReadLine();
+
+        Console.Write("Modell: ");
+        var model = Console.ReadLine();
+
+        Console.Write("Årsmodell: ");
+        if (!int.TryParse(Console.ReadLine(), out yearModel))
         {
-            Console.WriteLine("Skiltnummer: ");
-            plateNumber = Console.ReadLine();
-            Console.WriteLine("Merke: ");
-            brand = Console.ReadLine();
-            Console.WriteLine("Modell: ");
-            model = Console.ReadLine();
-            Console.WriteLine("Årsmodell: ");
-            yearModel = int.Parse(Console.ReadLine());
-        }
-        catch (Exception e)
-        {
-            Console.WriteLine($"Error: {e.Message}");
-            throw;
+            Console.WriteLine("You did not enter a valid number!");
         }
 
         return new Vehicle

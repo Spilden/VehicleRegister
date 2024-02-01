@@ -5,7 +5,6 @@ public class Boat : Vehicle
     public float Length { get; set; }
     public float Width { get; set; }
     public int Hp { get; set; }
-
     public override void DisplayInfo()
     {
         base.DisplayInfo();
@@ -14,16 +13,18 @@ public class Boat : Vehicle
 
     public static Boat CreateBoat()
     {
-        float lenght, width;
+        float length, width;
         int hp;
-
         var vehicle = CreateVehicle(); // Kaller CreateVehicle fra Vehicle classen og lagrer den i en ny variabel.
         try
         {
-            lenght = float.Parse(Console.ReadLine());
-            Console.WriteLine("Hvor brei er båten?");
+            Console.Write("Fot: ");
+            length = float.Parse(Console.ReadLine());
+
+            Console.Write("Bredde: ");
             width = float.Parse(Console.ReadLine());
-            Console.WriteLine("Hvor mange hestekrefter har båten?");
+
+            Console.Write("Hestekrefter: ");
             hp = int.Parse(Console.ReadLine());
         }
         catch (Exception e)
@@ -38,7 +39,7 @@ public class Boat : Vehicle
             Brand = vehicle.Brand,
             Model = vehicle.Model,
             YearModel = vehicle.YearModel,
-            Length = lenght,
+            Length = length,
             Width = width,
             Hp = hp
         };
