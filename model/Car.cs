@@ -15,7 +15,7 @@ public class Car : Vehicle
         // int seats;
         var vehicle = CreateVehicle(); // Kaller CreateVehicle fra Vehicle classen og lagrer den i en ny variabel.
         int seats;
-        
+
         Console.Write("Antall Seter: ");
         while (!int.TryParse(Console.ReadLine(), out seats))
         {

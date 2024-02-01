@@ -13,7 +13,7 @@ public class Motorcycle : Vehicle
     public static Motorcycle CreateMotorcycle()
     {
         var vehicle = CreateVehicle(); // Kaller CreateVehicle fra Vehicle classen og lagrer den i en ny variabel.
-        
+
         Console.WriteLine("Sidevogn? 'ja/nei': ");
         var sideCar = Console.ReadLine().ToLower() == "ja";
 

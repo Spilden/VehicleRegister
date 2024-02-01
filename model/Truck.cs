@@ -3,13 +3,14 @@ namespace VehicleRegister.model;
 public class Truck : Vehicle
 {
     public int LoadCapacity { get; set; }
+
     public static Truck CreateTruck()
     {
         var vehicle = CreateVehicle(); // Kaller CreateVehicle fra Vehicle classen og lagrer den i en ny variabel.
         int loadCapacity;
-        
+
         Console.Write("Lastekapasitet: ");
-        while(!int.TryParse(Console.ReadLine(), out loadCapacity))
+        while (!int.TryParse(Console.ReadLine(), out loadCapacity))
         {
             Console.WriteLine("You did not enter a valid number!");
             Console.Write("Lastekapasitet: ");
@@ -24,6 +25,7 @@ public class Truck : Vehicle
             LoadCapacity = loadCapacity
         };
     }
+
     public override void DisplayInfo()
     {
         base.DisplayInfo();

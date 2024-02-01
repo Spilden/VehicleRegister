@@ -5,6 +5,7 @@ public class Boat : Vehicle
     public float Length { get; set; }
     public float Width { get; set; }
     public int Hp { get; set; }
+
     public override void DisplayInfo()
     {
         base.DisplayInfo();
