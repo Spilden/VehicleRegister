@@ -14,10 +14,13 @@ public class Car : Vehicle
     {
         // int seats;
         var vehicle = CreateVehicle(); // Kaller CreateVehicle fra Vehicle classen og lagrer den i en ny variabel.
+        int seats;
+        
         Console.Write("Antall Seter: ");
-        if (!int.TryParse(Console.ReadLine(), out var seats))
+        while (!int.TryParse(Console.ReadLine(), out seats))
         {
             Console.WriteLine("You did not enter a valid number!");
+            Console.Write("Antall Seter: ");
         }
 
         return new Car

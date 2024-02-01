@@ -1,4 +1,4 @@
-using VehicleRegister.model;
+namespace VehicleRegister.model;
 
 public class Truck : Vehicle
 {
@@ -6,11 +6,13 @@ public class Truck : Vehicle
     public static Truck CreateTruck()
     {
         var vehicle = CreateVehicle(); // Kaller CreateVehicle fra Vehicle classen og lagrer den i en ny variabel.
+        int loadCapacity;
         
         Console.Write("Lastekapasitet: ");
-        if(!int.TryParse(Console.ReadLine(), out var loadCapacity))
+        while(!int.TryParse(Console.ReadLine(), out loadCapacity))
         {
             Console.WriteLine("You did not enter a valid number!");
+            Console.Write("Lastekapasitet: ");
         }
 
         return new Truck

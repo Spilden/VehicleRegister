@@ -1,4 +1,5 @@
 using VehicleRegister.model;
+namespace VehicleRegister.service;
 
 public class VehicleService
 {

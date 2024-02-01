@@ -27,9 +27,10 @@ public class Vehicle
         var model = Console.ReadLine();
 
         Console.Write("Årsmodell: ");
-        if (!int.TryParse(Console.ReadLine(), out yearModel))
+        while (!int.TryParse(Console.ReadLine(), out yearModel))
         {
             Console.WriteLine("You did not enter a valid number!");
+            Console.Write("Årsmodell: ");
         }
 
         return new Vehicle

@@ -1,4 +1,5 @@
 ﻿using VehicleRegister.model;
+using VehicleRegister.service;
 
 var vehicleService = new VehicleService();
 
