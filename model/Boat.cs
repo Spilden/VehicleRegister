@@ -1,4 +1,5 @@
 namespace VehicleRegister.model;
+using service;
 
 public class Boat : Vehicle
 {
@@ -17,22 +18,16 @@ public class Boat : Vehicle
         float length, width;
         int hp;
         var vehicle = CreateVehicle(); // Kaller CreateVehicle fra Vehicle classen og lagrer den i en ny variabel.
-        try
-        {
+        
             Console.Write("Fot: ");
-            length = float.Parse(Console.ReadLine());
+            length = Convert.ConvertStringFloat("Fot: ");
 
             Console.Write("Bredde: ");
-            width = float.Parse(Console.ReadLine());
+            width = Convert.ConvertStringFloat("Bredde: ");
 
             Console.Write("Hestekrefter: ");
-            hp = int.Parse(Console.ReadLine());
-        }
-        catch (Exception e)
-        {
-            Console.WriteLine($"Error: {e.Message}");
-            throw;
-        }
+            hp = Convert.ConvertStringInt("Hestekrefter: ");
+        
 
         return new Boat
         {

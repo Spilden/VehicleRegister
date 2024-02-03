@@ -1,4 +1,5 @@
 namespace VehicleRegister.model;
+using service;
 
 public class Truck : Vehicle
 {
@@ -10,11 +11,7 @@ public class Truck : Vehicle
         int loadCapacity;
 
         Console.Write("Lastekapasitet: ");
-        while (!int.TryParse(Console.ReadLine(), out loadCapacity))
-        {
-            Console.WriteLine("You did not enter a valid number!");
-            Console.Write("Lastekapasitet: ");
-        }
+        loadCapacity = Convert.ConvertStringInt("Lastekapasitet: ");
 
         return new Truck
         {

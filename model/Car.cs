@@ -1,4 +1,5 @@
 namespace VehicleRegister.model;
+using service;
 
 public class Car : Vehicle
 {
@@ -17,11 +18,7 @@ public class Car : Vehicle
         int seats;
 
         Console.Write("Antall Seter: ");
-        while (!int.TryParse(Console.ReadLine(), out seats))
-        {
-            Console.WriteLine("You did not enter a valid number!");
-            Console.Write("Antall Seter: ");
-        }
+        seats = Convert.ConvertStringInt("Antall seter: ");
 
         return new Car
         {

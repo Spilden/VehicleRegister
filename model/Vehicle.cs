@@ -1,4 +1,5 @@
 namespace VehicleRegister.model;
+using service;
 
 public class Vehicle
 {
@@ -27,11 +28,7 @@ public class Vehicle
         var model = Console.ReadLine();
 
         Console.Write("Årsmodell: ");
-        while (!int.TryParse(Console.ReadLine(), out yearModel))
-        {
-            Console.WriteLine("You did not enter a valid number!");
-            Console.Write("Årsmodell: ");
-        }
+        yearModel = Convert.ConvertStringInt("Årsmodell: ");
 
         return new Vehicle
         {
